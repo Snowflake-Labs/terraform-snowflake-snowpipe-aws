@@ -1,2 +1,26 @@
 # terraform-snowflake-snowpipe-aws
-Terraform module for creating Snowpipe to ingest data from AWS S3 bucket
+Terraform module for creating Snowpipe to ingest data from AWS S3 bucket.
+
+## Required parameters
+| Parameter | Description |
+| ------ | ------ |
+| database_name | The name of an existing Snowflake database |
+| schema_name | The name of an existing Snowflake schema in the database above |
+| comment | Comment text |
+| stage_name | The name of the Snowflake stage to create |
+| storage_integration_name | The name of an existing Snowflake storage integration |
+| aws_s3_url | The AWS S3 url to the directory of the source files to be ingested |
+| pipe_name| The name of the Snowflake pipe to create |
+| aws_sns_topic_arn| AWS SNS topic ARN from the Snowflake storage integration |
+| table_name| The table name for the data to be ingested into |
+
+
+
+
+## Optional parameters
+| Parameter | Description |
+| ------ | ------ |
+| create_stage | Default is "true". Set to "false" to use an existing stage and not creaete a new one. |
+| file_format | Default is "JSON". Source file format. |
+| pipe_enable | Default is "true". Set to "false" to disable auto-ingest for the pipe |
+| custom_ingest_columns | Key value map, 'source_columns' and 'target_columns', containing comma separated table columns.<pre>Example:<br>custom_ingest_columns = {<br>   target_columns = "recorded_at, response"<br>    source_columns = "CURRENT_TIMESTAMP, $1"<br>}</pre> |
