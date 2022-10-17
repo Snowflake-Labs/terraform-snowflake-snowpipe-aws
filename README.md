@@ -23,4 +23,4 @@ Terraform module for creating Snowpipe to ingest data from AWS S3 bucket.
 | create_stage | Default is "true". Set to "false" to use an existing stage and not creaete a new one. |
 | file_format | Default is "JSON". Source file format. |
 | pipe_enable | Default is "true". Set to "false" to disable auto-ingest for the pipe |
-| custom_ingest_columns | Key value map, 'source_columns' and 'target_columns', containing comma separated table columns.<pre>Example:<br>custom_ingest_columns = {<br>   target_columns = "recorded_at, response"<br>    source_columns = "CURRENT_TIMESTAMP, $1"<br>}</pre> |
+| custom_ingest_columns | Key value map, 'source_columns' and 'target_columns', containing comma separated table columns.<pre>Example:<br>custom_ingest_columns = {<br>   target_columns = "recorded_at, response"<br>   source_columns = "CURRENT_TIMESTAMP, $1"<br>}</pre> |
