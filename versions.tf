@@ -4,10 +4,10 @@ terraform {
   required_providers {
     snowflake = {
       source  = "Snowflake-Labs/snowflake"
-      version = ">= 0.47.0"
+      version = "~> 0.47.0"
 
       configuration_aliases = [
-        snowflake.snowpipe_ingest_role
+        snowflake.ingest_role
       ]
     }
   }
