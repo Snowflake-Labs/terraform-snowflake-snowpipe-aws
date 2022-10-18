@@ -8,11 +8,6 @@ variable "schema_name" {
   type        = string
 }
 
-variable "comment" {
-  description = "Comment text"
-  type        = string
-}
-
 variable "stage_name" {
   description = "Stage name"
   type        = string
@@ -24,8 +19,24 @@ variable "create_stage" {
   default     = true
 }
 
-variable "storage_integration_name" {
-  description = "Storage integration"
+variable "pipe_name" {
+  description = "Name of the pipe"
+  type        = string
+}
+
+variable "auto_ingest" {
+  description = "Enable auto-ingest for the pipe"
+  type        = bool
+  default     = true
+}
+
+variable "comment" {
+  description = "Comment text"
+  type        = string
+}
+
+variable "aws_sns_topic_arn" {
+  description = "AWS SNS topic ARN"
   type        = string
 }
 
@@ -34,35 +45,24 @@ variable "aws_s3_url" {
   type        = string
 }
 
-variable "file_format" {
-  description = "Source file format"
-  type        = string
-  default     = "JSON"
-}
-
-variable "pipe_name" {
-  description = "Name of the pipe"
+variable "storage_integration_name" {
+  description = "Storage integration"
   type        = string
 }
 
-variable "pipe_enable" {
-  description = "Enable auto-ingest for the pipe"
-  type        = bool
-  default     = true
-}
-
-variable "aws_sns_topic_arn" {
-  description = "AWS SNS topic ARN"
-  type        = string
-}
-
-variable "table_name" {
+variable "destination_table_name" {
   description = "Destination table name"
   type        = string
 }
 
 variable "custom_ingest_columns" {
   description = "Key value map, 'source_columns' and 'target_columns', containing comma separated table columns."
-  type        = map
+  type        = map(list(string))
   default     = {}
+}
+
+variable "file_format" {
+  description = "Source file format"
+  type        = string
+  default     = "JSON"
 }
