@@ -16,7 +16,7 @@ EOF
 }
 
 resource "snowflake_pipe" "this" {
-  provider = snowflake.snowpipe_ingest_role
+  provider = snowflake.ingest_role
 
   database = var.database_name
   schema   = var.schema_name

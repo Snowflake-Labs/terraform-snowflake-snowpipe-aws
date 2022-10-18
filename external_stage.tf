@@ -1,6 +1,6 @@
 resource "snowflake_stage" "this" {
   count    = var.create_stage ? 1 : 0
-  provider = snowflake.snowpipe_ingest_role
+  provider = snowflake.ingest_role
 
   database = var.database_name
   schema   = var.schema_name
@@ -13,7 +13,7 @@ resource "snowflake_stage" "this" {
 }
 
 data "snowflake_stages" "this" {
-  provider = snowflake.snowpipe_ingest_role
+  provider = snowflake.ingest_role
   database = var.database_name
   schema   = var.schema_name
 }
