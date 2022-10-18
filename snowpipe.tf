@@ -2,10 +2,10 @@ locals {
   copy_statement = <<-EOF
 %{if length(var.custom_ingest_columns) > 0}
 COPY INTO ${var.database_name}.${var.schema_name}.${var.destination_table_name}(
-    ${lookup(var.custom_ingest_columns, "target_columns")}
+    ${join(", ", var.custom_ingest_columns["target_columns"])}
 )
 FROM (
-    SELECT ${lookup(var.custom_ingest_columns, "source_columns")}
+    SELECT ${join(", ", var.custom_ingest_columns["source_columns"])}
     FROM @${var.database_name}.${var.schema_name}.${var.stage_name}
 )
 %{else}
