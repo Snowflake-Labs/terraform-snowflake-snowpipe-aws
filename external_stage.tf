@@ -5,11 +5,12 @@ resource "snowflake_stage" "this" {
   database = var.database_name
   schema   = var.schema_name
   name     = var.stage_name
-  comment  = "${var.comment} - Stage"
 
   url                 = var.aws_s3_url
   storage_integration = var.storage_integration_name
   file_format         = "TYPE = ${var.file_format}"
+
+  comment = var.comment
 }
 
 data "snowflake_stages" "this" {
