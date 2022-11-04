@@ -50,6 +50,12 @@ variable "storage_integration_name" {
   type        = string
 }
 
+variable "notification_integration_name" {
+  description = "Notification integration to which to send pipe errors."
+  type        = string
+  default     = null
+}
+
 variable "destination_table_name" {
   description = "Destination table name."
   type        = string
