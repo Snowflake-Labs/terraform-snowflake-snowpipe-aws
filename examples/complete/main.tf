@@ -9,6 +9,7 @@ module "my_snowpipe" {
   aws_s3_url               = var.aws_s3_url
   aws_sns_topic_arn        = var.aws_sns_topic_arn
   storage_integration_name = var.storage_integration_name
+  notification_integration_name = var.notification_integration_name
 
   destination_table_name = var.destination_table_name
   custom_ingest_columns = {
