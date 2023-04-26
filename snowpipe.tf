@@ -1,7 +1,7 @@
 locals {
   copy_statement = <<-EOF
 %{if length(var.custom_ingest_columns) > 0}
-  %{if length(var.custom_ingest_columns) == 1 || length(var.custom_ingest_columns["target_columns"]) == 0}
+  %{if length(var.custom_ingest_columns["target_columns"]) == 0}
     COPY INTO ${var.database_name}.${var.schema_name}.${var.destination_table_name}
   %{else}
     COPY INTO ${var.database_name}.${var.schema_name}.${var.destination_table_name}(
