@@ -1,0 +1,25 @@
+snowflake_account = "my-snowflake-instance"
+prefix            = "my-use-case"
+
+database_name = "MY_DB"
+schema_name   = "MY_SCHEMA"
+stage_name    = "MY_STAGE"
+pipe_name     = "MY_PIPE"
+
+aws_sns_topic_arn        = "my_sns_arn"
+aws_s3_url               = "s3://my-bucket/my-prefix"
+storage_integration_name = "MY_STORAGE_INTEGRATION"
+
+destination_table_name = "MY_TARGET_TABLE"
+custom_ingest_columns  = {
+    source_columns = [
+        "MY_COL1",
+        "MY_COL2",
+        "MY_COL3",
+    ]
+    target_columns = [
+        "MY_COL1",
+        "MY_COL2",
+        "MY_COL3",
+    ]
+}

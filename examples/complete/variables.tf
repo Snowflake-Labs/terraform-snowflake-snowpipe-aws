@@ -69,7 +69,10 @@ variable "destination_table_name" {
 variable "custom_ingest_columns" {
   description = "Key value map, 'source_columns' and 'target_columns', containing comma separated table columns."
   type        = map(list(string))
-  default     = {}
+  default = {
+    source_columns = [],
+    target_columns = [],
+  }
 }
 
 variable "file_format" {
