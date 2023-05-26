@@ -1,3 +1,4 @@
+# Required
 variable "database_name" {
   description = "Snowflake database name."
   type        = string
@@ -11,12 +12,6 @@ variable "schema_name" {
 variable "stage_name" {
   description = "Stage name."
   type        = string
-}
-
-variable "create_stage" {
-  description = "Create new stage or use an existing stage."
-  type        = bool
-  default     = true
 }
 
 variable "pipe_name" {
@@ -50,21 +45,31 @@ variable "storage_integration_name" {
   type        = string
 }
 
+variable "destination_table_name" {
+  description = "Destination table name."
+  type        = string
+}
+
+# Optional
+variable "create_stage" {
+  description = "Create new stage or use an existing stage."
+  type        = bool
+  default     = true
+}
+
 variable "notification_integration_name" {
   description = "Notification integration to which to send pipe errors."
   type        = string
   default     = null
 }
 
-variable "destination_table_name" {
-  description = "Destination table name."
-  type        = string
-}
-
 variable "custom_ingest_columns" {
   description = "Key value map, 'source_columns' and 'target_columns', containing comma separated table columns."
   type        = map(list(string))
-  default     = {}
+  default = {
+    source_columns = [],
+    target_columns = [],
+  }
 }
 
 variable "file_format" {
