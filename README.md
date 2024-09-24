@@ -14,7 +14,7 @@ Terraform module for creating Snowpipe to ingest data from AWS S3 bucket.
 | aws_s3_url               | The AWS S3 url to the directory of the source files to be ingested |
 | aws_sns_topic_arn        | AWS SNS topic ARN from the Snowflake storage integration           |
 | storage_integration_name | The name of an existing Snowflake storage integration              |
-| destination_table_name   | The table name for the data to be ingested into                    |
+| destination_table_name   | The name of an existing table for the data to be ingested into     |
 
 ## Optional parameters
 
