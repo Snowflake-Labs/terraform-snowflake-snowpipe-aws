@@ -43,7 +43,9 @@ resource "snowflake_pipe" "this" {
     snowflake_stage.this
   ]
 
-  replace_triggered_by = [
-    snowflake_stage.this
-  ]
+  lifecycle {
+    replace_triggered_by = [
+      snowflake_stage.this
+    ]
+  }
 }
