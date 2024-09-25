@@ -70,9 +70,9 @@ variable "custom_ingest_columns" {
 }
 
 variable "file_format" {
-  description = "Source file format."
+  description = "Source file format and options."
   type        = string
-  default     = "JSON"
+  default     = "TYPE = JSON NULL_IF = []"
 }
 
 variable "ingest_role" {
