@@ -1,5 +1,4 @@
 snowflake_account = "my-snowflake-instance"
-prefix = "my-use-case"
 
 database_name = "MY_DB"
 schema_name   = "MY_SCHEMA"
