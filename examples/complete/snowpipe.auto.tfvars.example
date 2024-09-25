@@ -8,7 +8,6 @@ pipe_name     = "MY_PIPE"
 
 create_stage                    = true
 auto_ingest                     = true
-create_notification_integration = true
 
 aws_sns_topic_arn        = "my_sns_arn"
 aws_s3_url               = "s3://my-bucket/my-prefix"
