@@ -1,4 +1,6 @@
 module "my_snowpipe" {
+  # In your project, replace the below with a reference to this repo (with an optional `?ref=v...` query parameter):
+  # source = "github.com/Snowflake-Labs/terraform-snowflake-snowpipe-aws"
   source = "../../"
 
   database_name = var.database_name
