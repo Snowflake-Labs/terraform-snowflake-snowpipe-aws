@@ -42,4 +42,8 @@ resource "snowflake_pipe" "this" {
   depends_on = [
     snowflake_stage.this
   ]
+
+  replace_triggered_by = [
+    snowflake_stage.this
+  ]
 }
