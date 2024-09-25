@@ -5,6 +5,7 @@ schema_name   = "MY_SCHEMA"
 stage_name    = "MY_STAGE"
 pipe_name     = "MY_PIPE"
 
+notification_integration_name   = "my_error_integration"
 create_stage                    = true
 auto_ingest                     = true
 
