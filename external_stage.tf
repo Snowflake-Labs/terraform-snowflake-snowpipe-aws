@@ -8,7 +8,7 @@ resource "snowflake_stage" "this" {
 
   url                 = var.aws_s3_url
   storage_integration = var.storage_integration_name
-  file_format         = "TYPE = ${var.file_format} NULL_IF = []"
+  file_format         = var.file_format
 
   comment = var.comment
 }
