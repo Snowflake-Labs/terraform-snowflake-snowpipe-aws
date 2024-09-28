@@ -26,5 +26,7 @@ custom_ingest_columns  = {
         "MY_COL3",
     ]
 }
-file_format            = "JSON"
+
+# After 0.2.4 the `file_format` parameter also has to contain any other parameters, the default was removed
+file_format            = "TYPE = AVRO TRIM_SPACE = true NULL_IF = [] REPLACE_INVALID_CHARACTERS = true"
 ingest_role            = "INGEST_RL"
