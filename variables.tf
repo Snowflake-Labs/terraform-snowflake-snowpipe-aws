@@ -72,8 +72,9 @@ variable "custom_ingest_columns" {
   }
 }
 
+# Please note: In 0.2.4 and older the `file_format` parameter was only the format itself, no extra options
 variable "file_format" {
-  description = "Source file format."
+  description = "Source file format and options."
   type        = string
-  default     = "JSON"
+  default     = "TYPE = JSON NULL_IF = []"
 }
